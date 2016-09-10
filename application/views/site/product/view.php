@@ -28,29 +28,30 @@ $(document).ready(function() {
 	//raty
 	$('.raty_detailt').raty({
 	score: function() {
-	return $(this).attr('data-score');
+		return $(this).attr('data-score');
 	},
 	half    : true,
 	click: function(score, evt) {
-	var rate_count = $('.rate_count');
-	var rate_count_total = rate_count.text();
-		$.ajax({
-			url: '',
-			type: 'POST',
-			data: {'id':'9','score':score},
-			dataType: 'json',
-			success: function(data)
-				{
-					if(data.complete)
-						{
-							var total = parseInt(rate_count_total)+1;
-							rate_count.html(parseInt(total));
+		var rate_count = $('.rate_count');
+		var rate_count_total = rate_count.text();
+			$.ajax({
+				url: '<?php echo site_url('product/raty');?>',
+				type: 'POST',
+				data: {'id':'<?php echo $product->id ?>','score':score},
+				dataType: 'json',
+				success: function(data)
+					{
+						console.log(data);
+						if(data.complete)
+							{
+								var total = parseInt(rate_count_total)+1;
+								rate_count.html(parseInt(total));
+							}
+								alert(data.msg);
 						}
-							alert(data.msg);
-					}
-			});
-		}
-});
+				});
+			}
+		});
 });
 </script>
 <div class="box-center"><!-- The box-center product-->
@@ -90,7 +91,7 @@ $(document).ready(function() {
 		<?php if($product->discount > 0): ?>
 		<?php $price_new = $product->price - $product->discount; ?>
 		<p class='price'>
-			<span class="product_price"><?php echo number_format($product->new) ?> đ</span>
+			<span class="product_price"><?php echo number_format($price_new) ?> đ</span>
 			<span class="price_old"><?php echo number_format($product->price) ?> đ</span>
 		</p>
 		<?php else: ?>
@@ -121,8 +122,8 @@ $(document).ready(function() {
 	<?php endif; ?>
 	
 	Đánh giá &nbsp;
-	<span class="raty_detailt" style="margin:5px" id="9" data-score="4"></span>
-	| Tổng số: <b class="rate_count">1</b>
+	<span class="raty_detailt" style="margin:5px" id="<?php echo $product->id ?>" data-score="<?php echo $product->raty ?>"></span>
+	| Tổng số: <b class="rate_count"><?php echo $product->rate_count; ?></b>
 	
 	<div class="action">
 		<a class="button" style="float:left;padding:8px 15px;font-size:16px" href="<?php echo base_url('cart/add/'.$product->id);?>" title="Mua ngay">

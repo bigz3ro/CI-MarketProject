@@ -8,7 +8,7 @@
 			<ul>
 				<li><a href="" target="_blank">
 					<img style="margin-top:7px;" src="<?php echo public_url('admin') ?>/images/icons/light/home.png" />
-					<span>Trang chủ</span>
+					<a href="<?php echo site_url('admin/transaction/index') ?>" style="margin: 4px">Trang chủ</a>
 				</a></li>
 				
 				<!-- Logout -->

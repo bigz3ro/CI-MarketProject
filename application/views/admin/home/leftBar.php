@@ -21,30 +21,25 @@
 		
 		<ul id="menu" class="nav">
 			<li class="home">
-				
-				<a href="<?php echo admin_url();?>" class="active" id="current">
+				<!-- <a href="<?php echo admin_url();?>" class="active" id="current">
 					<span>Bảng điều khiển</span>
 					<strong></strong>
-				</a>
-				
-				
+				</a> -->
 			</li>
 			<li class="tran">
 				
 				<a href="" class=" exp" >
 					<span>Quản lý bán hàng</span>
-					<strong>2</strong>
+					<strong>1</strong>
 				</a>
 				
 				<ul class="sub">
 					<li >
-						<a href="">
-						Giao dịch							</a>
+						<a href="<?php echo admin_url('transaction');?>">
+							Giao dịch							
+						</a>
 					</li>
-					<li >
-						<a href="">
-						Đơn hàng sản phẩm							</a>
-					</li>
+					
 				</ul>
 				
 			</li>
@@ -93,19 +88,14 @@
 			</li>
 			<li class="support">
 				
-				<a href="admin/support.html" class=" exp" >
-					<span>Hỗ trợ và liên hệ</span>
-					<strong>2</strong>
+				<a href="" class=" exp" >
+					<span>Contact</span>
+					<strong>1</strong>
 				</a>
 				
 				<ul class="sub">
 					<li >
-						<a href="">
-						Hỗ trợ							
-						</a>
-					</li>
-					<li >
-						<a href="">
+						<a href="<?php echo admin_url('contact'); ?>">
 						Liên hệ							
 						</a>
 					</li>

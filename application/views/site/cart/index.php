@@ -1,55 +1,59 @@
-<style type="text/css">.table&amp;amp;gt;tbody&amp;amp;gt;tr&amp;amp;gt;td, .table&amp;amp;gt;tfoot&amp;amp;gt;tr&amp;amp;gt;td {
-vertical-align: middle;
-}
+<style type="text/css">
+  .table tbody tr td, .table tfoot tr td {
+    vertical-align: middle;
+  }
 
-@media screen and (max-width: 600px) {
-table#cart tbody td .form-control {
-width:20%;
-display: inline !important;
-}
+    @media screen and (max-width: 600px) {
+    table#cart tbody td .form-control {
+      width:20%;
+      display: inline !important;
+    }
 
-.actions .btn {
-width:36%;
-margin:1.5em 0;
-}
+    .actions .btn {
+      width:36%;
+      margin:1.5em 0;
+    }
 
-.actions .btn-info {
-float:left;
-}
+    .actions .btn-info {
+      float:left;
+    }
 
-.actions .btn-danger {
-float:right;
-}
+    .actions .btn-danger {
+      float:right;
+    }
 
-table#cart thead {
-display: none;
-}
+    table#cart thead {
+      display: none;
+    }
 
-table#cart tbody td {
-display: block;
-padding: .6rem;
-min-width:320px;
-}
+    table#cart tbody td {
+      display: block;
+      padding: .6rem;
+      min-width:320px;
+    }
 
-table#cart tbody tr td:first-child {
-background: #333;
-color: #fff;
-}
+    table#cart tbody tr td:first-child {
+      background: #333;
+      color: #fff;
+    }
 
-table#cart tbody td:before {
-content: attr(data-th);
-font-weight: bold;
-display: inline-block;
-width: 8rem;
-}
+    table#cart tbody td:before {
+      content: attr(data-th);
+      font-weight: bold;
+      display: inline-block;
+      width: 8rem;
+    }
 
-table#cart tfoot td {
-display:block;
-}
-table#cart tfoot td .btn {
-display:block;
-}
+    table#cart tfoot td {
+      display:block;
+    }
+    table#cart tfoot td .btn {
+      display:block;
+    }
 }</style>
+<link rel="stylesheet" href="<?php echo base_url('public/admin') ?>/css/bootstrap/bootstrap.css">
+<script src="<?php echo base_url('public') ?>/js/bootstrap.js"></script>
+
 <div class="container" style="width: 800px;float: left;">
 <?php if($total_items > 0): ?>
 <form method="post" action="<?php echo base_url('cart/update'); ?>">
@@ -100,9 +104,11 @@ display:block;
         <a class="btn btn-warning fa fa-angle-left" href="<?php echo base_url('cart/del'); ?>">Xóa hết</a>
     </td>
   <td colspan="2" class="hidden-xs"> </td>
-  <td class="hidden-xs text-center"><strong>Tổng tiền <?php echo number_format($total_amount) ?></strong>
+  <td class="hidden-xs text-center"><strong style="color:#F37021;">Tổng tiền <?php echo number_format($total_amount) ?></strong>
   </td>
-  <td><a href="http://hocwebgiare.com/" class="btn btn-success btn-block">Thanh toán <i class="fa fa-angle-right"></i></a>
+  <td>
+    <a href="<?php echo site_url('order/check_out'); ?>" class="btn btn-success btn-block">Đặt hàng<i class="fa fa-angle-right"></i>
+    </a>
   </td>
   </tr>
   </tfoot>
@@ -112,6 +118,3 @@ display:block;
   <h4>Không có sản phẩm nào</h4>
 <?php endif; ?>
 </div>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>

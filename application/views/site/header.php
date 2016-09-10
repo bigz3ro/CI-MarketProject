@@ -39,12 +39,19 @@
 	<div id="menu"><!-- the menu -->
 	<ul class="menu_top" style="display: flex ;">
 		<li class="active index-li"><a href="<?php echo base_url('home') ?>">Cửa hàng</a></li>
-	<?php foreach($catalog_list as $row): ?>
-		<li class=""><a href="<?php echo base_url('product/page/'.$row->id) ?>"><?php echo $row->name ?></a></li>
-	<?php endforeach; ?>
-		<li class=""><a href="">Liên hệ</a></li>
-		<li class=""><a href="<?php echo site_url('user/register') ?>">Đăng ký</a></li>
+		<?php foreach($catalog_list as $row): ?>
+		<li class="">
+			<a href="<?php echo base_url('product/page/'.$row->id) ?>"><?php echo $row->name ?></a>
+		</li>
+		<?php endforeach; ?>
+		<li class=""><a href="<?php echo site_url('contact') ?>">Liên hệ</a></li>
+		<?php if(isset($user_info)): ?>
+			<li><a href="<?php echo site_url('user'); ?>">Xin chào:<?php echo $user_info->name ?></a></li>
+			<li><a href="<?php echo site_url('user/logout'); ?>">Thoát</a></li>
+		<?php else: ?>
+		<li class=""><a href="<?php echo site_url('user/register') ?>" id="register">Đăng ký</a></li>
 		<li class=""><a href="<?php echo site_url('user/login') ?>">Đăng nhập</a></li>
+	<?php endif; ?>
 	</ul>
 	</div><!-- End menu -->			   
 	<!-- End box-header  -->

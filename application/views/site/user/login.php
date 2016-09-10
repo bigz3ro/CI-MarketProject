@@ -5,7 +5,7 @@
 	</div>
 	<div class="box-content-center register"><!-- The box-content-center -->
 	<h1>Đăng nhập</h1>
-	<form enctype="multipart/form-data" action="<?php site_url('user/register');?>" method="post" class="t-form form_action">
+	<form enctype="multipart/form-data" action="<?php echo site_url('user/login');?>" method="post" class="t-form form_action">
 		<div class="form-row">
 			<label class="form-label" for="param_email">Email<span class="req">*</span></label>
 			<div class="form-item">
@@ -25,25 +25,14 @@
 			</div>
 			<div class="clear"></div>
 		</div>
-		
-		<div class="form-row">
-			<label class="form-label" for="param_re_password">Nhập lại mật khẩu:<span class="req">*</span></label>
-			<div class="form-item">
-				<input type="password" name="re_password" id="re_password" class="input">
-				<div class="clear"></div>
-				<div id="re_password_error" class="error"></div>
-			</div>
-			<div class="clear"></div>
-		</div>
 
 		<div class="form-row">
 			<label class="form-label">&nbsp;</label>
-			<div class="form-item">
-				<input type="submit" name="submit" value="Đăng nhập" class="button" id="submit">
-				<a name="register" value="Đăng kí" class="button" id="register" href="<?php echo site_url('user/register') ?>" style="padding: 12px 30px !important;">Đăng kí</a>
+			<div class="form-item"> 
+				<input name="login" type="submit" value="Đăng nhập" class="button" id="login">
 			</div>
 		</div>
-	</form>
-</div>
+		</form>
+	</div>
 </div>
 </div>

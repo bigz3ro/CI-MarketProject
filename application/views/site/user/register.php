@@ -5,13 +5,13 @@
 	</div>
 	<div class="box-content-center register"><!-- The box-content-center -->
 	<h1>Đăng ký thành viên</h1>
-	<form enctype="multipart/form-data" action="<?php site_url('user/register');?>" method="post" class="t-form form_action">
+	<form enctype="multipart/form-data" action="<?php echo base_url('user/register');?>" method="post" class="t-form form_action">
 		<div class="form-row">
 			<label class="form-label" for="param_email">Email<span class="req">*</span></label>
 			<div class="form-item">
 				<input type="text" value="" name="email" id="email" class="input">
 				<div class="clear"></div>
-				<div id="email_error" class="error"></div>
+				<div id="email_error" class="error"><?php echo form_error('email'); ?></div>
 			</div>
 			<div class="clear"></div>
 		</div>
@@ -21,7 +21,7 @@
 			<div class="form-item">
 				<input type="password" name="password" id="password" class="input">
 				<div class="clear"></div>
-				<div id="password_error" class="error"></div>
+				<div id="password_error" class="error"><?php echo form_error('password'); ?></div>
 			</div>
 			<div class="clear"></div>
 		</div>
@@ -31,7 +31,7 @@
 			<div class="form-item">
 				<input type="password" name="re_password" id="re_password" class="input">
 				<div class="clear"></div>
-				<div id="re_password_error" class="error"></div>
+				<div id="re_password_error" class="error"><?php echo form_error('re_password'); ?></div>
 			</div>
 			<div class="clear"></div>
 		</div>
@@ -40,26 +40,26 @@
 			<div class="form-item">
 				<input type="text" value="" name="name" id="name" class="input">
 				<div class="clear"></div>
-				<div id="name_error" class="error"></div>
+				<div id="name_error" class="error"><?php echo form_error('name'); ?></div>
 			</div>
 			<div class="clear"></div>
 		</div>
 		<div class="form-row">
-			<label class="form-label" for="param_phone">Số điện thoại :<span class="req">*</span></label>
+			<label class="form-label" for="param_phone">Số điện thoại :<span class="req"></span></label>
 			<div class="form-item">
 				<input type="text" value="" name="phone" id="phone" class="input">
 				<div class="clear"></div>
-				<div id="phone_error" class="error"></div>
+				<div id="phone_error" class="error"><?php echo form_error('phone'); ?></div>
 			</div>
 			<div class="clear"></div>
 		</div>
 		
 		<div class="form-row">
-			<label class="form-label" for="param_address">Địa chỉ:<span class="req">*</span></label>
+			<label class="form-label" for="param_address">Địa chỉ:<span class="req"></span></label>
 			<div class="form-item">
 				<input name="address" id="address" class="input">
 				<div class="clear"></div>
-				<div id="address_error" class="error"></div>
+				<div id="address_error" class="error"><?php echo form_error('address'); ?></div>
 			</div>
 			<div class="clear"></div>
 		</div>
@@ -72,15 +72,14 @@
 		<div class="form-row">
 			<label class="form-label">&nbsp;</label>
 			<div class="form-item">
-				<button value="Đăng ký" class="button" id="submit" name="submit">Đăng kí</button>
+				<button class="button"  id="submit" name="submit">Đăng kí</button>
 			</div>
 		</div>
 	</form>
 	</div><!-- End box-content-center register-->
 	</div><!-- End box-center -->
 </div>
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 			//Khi click nut submit
 			$('#submit').click(function()
 			{
@@ -93,18 +92,15 @@
 					 address : $('#address').val(),
 				};
 				jQuery.ajax({
-				 	url: '<?php echo base_url('user/register'); ?>',
+				 	url: ' echo base_url('user/register')',
 				  	type: 'POST',
 				  	data: form_data,
 				  	//Function xu li du lieu tra ve
 					success: function(msg) 
 					{
-				    	if(msg == "YES")
-				    		$('.message').html('Đăng kí thành công');
-				    	else
-				    		$('.message').html('Đăng kí không thành công');
+						console.log(msg);
 			  		}
 			});
 			return false;
 		});
-</script>
+</script> --> 

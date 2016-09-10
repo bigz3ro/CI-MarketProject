@@ -4,7 +4,8 @@
 			<h2>Danh sách sản phẩm</h2>
 		</div>
 		<div class="box-content-center product"><!-- The box-content-center -->
-
+		<?php if(!isset($list_all)): ?>
+		<?php else: ?> 
 		<?php foreach($list_all as $product): ?>
 		<div class='product_item'>
 			<h3>
@@ -31,7 +32,7 @@
 			</center>
 			<div class='action'>
 				<p>Lượt xem: <b><?php echo $product->view ?></b></p>
-				<a class='button' href="" title='Mua ngay'>Mua ngay</a>
+				<a class='button' href="<?php echo base_url('product/view/'.$product->id) ?>" title='Mua ngay'>Mua ngay</a>
 				<div class='clear'></div>
 			</div>
 		</div>
@@ -39,5 +40,5 @@
 		<div class='clear'></div>
 		</div><!-- End box-content-center -->
 	</div>
-	
+	<?php endif; ?>
 </div>

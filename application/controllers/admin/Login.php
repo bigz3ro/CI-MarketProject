@@ -16,7 +16,7 @@ class Login extends MY_Controller{
 				$this->session->set_userdata($info);
 				$this->session->set_userdata('logged_in', true); //Neu kiem tra la dang thanh cong het thi cho dang nhap
 
-				redirect(admin_url('home'));//Chuyen den giao dien admin
+				redirect(admin_url('transaction'));//Chuyen den giao dien admin
 			}
 		}
 		$this->load->view('admin/login/index');
